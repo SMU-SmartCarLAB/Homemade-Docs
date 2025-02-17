@@ -7,4 +7,4 @@
 关于我们：[上海海事大学智能车实验室](https://smuscl.org/)  
 
 技术支持by [MkDocs](https://www.mkdocs.org) and [Read The Docs](https://about.readthedocs.com/)  
-Content hosting on [Github]
+Content hosting on [GitHub](https://github.com/SMU-SmartCarLAB/Homemade-Docs)
