@@ -39,36 +39,36 @@ docs/                              --docs文件夹，存放所有markdown文件
     how_to_build_a_spaceship.md
     fundamentals_of_rocket_science.md
     ....
-pics/                              --图片文件夹，存放需要在文档中展示的图片
-    docA/                          --为每一个需要存放图片的文档创建一个单独的文件夹，文件夹名称与文档名称相同
-         blown_capacitor.jpg
-         ...
-    docB/
-         grapes_in_the_microwave.jpg
-         ...
+    img/                              --图片文件夹，存放需要在文档中展示的图片
+        docA/                         --为每一个需要存放图片的文档创建一个单独的文件夹，文件夹名称与文档名称相同
+              blown_capacitor.jpg
+             ...
+        docB/
+              grapes_in_the_microwave.jpg
+              ...
     ...
 ```
 您撰写的文档应该放置于`/docs`文件夹中，**不要随意修改或删除不是自己创建的文档**，请互相尊重他人的劳动成果。  
 
 创建文档时，**请注意文档名称仅支持英文字符**，文档名称应当清晰的表达文档包含的内容主题且不宜过长，**禁止使用拼音**，单词之间使用下划线`_`进行分隔。
 
-如需在文档中插入图片，请在`/pics`文件夹下创建一个**与文档名字相同的文件夹**放置需要插入的图片，由于本仓库托管在GitHub并且我们买不起付费账户，为了减小仓库体积，请使用JPG格式的图片并尽量控制图片大小小于`700KB`。
+如需在文档中插入图片，请在`/docs/img`文件夹下创建一个**与文档名字相同的文件夹**放置需要插入的图片，由于本仓库托管在GitHub并且我们买不起付费账户，为了减小仓库体积，请使用JPG格式的图片并尽量控制图片大小小于`700KB`。
 ### 编写文档文件
 MkDocs接受使用标准Markdown语法编写的文档，文件后缀名为`.md`,关于Markdown语法的更多内容，可以参考[Markdown教程](https://markdown.com.cn/)。   
 
 MkDocs会按照Markdown文件中的标题层级生成导航栏，共支持三级标题结构，一级标题将被作为页面的启始标题，二三级标题构成包含在一级标题下的下拉列表，点击相应的标题即可跳转到对应的文档位置，三级以下的标题将不会展示在MkDocs导航栏中，但其在文档中的展示样式依旧遵循Markdown标题的渲染规则。  
 
 在文档中插入图片的操作与常规Markdown文档相同，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。  
-like this: `![图片alt](图片链接 "图片title")`  特定于本工程的结构下，图片链接应该为`/pics/文档标题/图片名字.jpg`   
+like this: `![图片alt](图片链接 "图片title")`  特定于本工程的结构下，图片链接应该为`img/文档标题/图片名字.jpg`   
 
 如这段文本将产生如下的图片插入效果
 ```markdown
-![grapes in the microwave](/pics/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
+![grapes in the microwave](img/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
 ```
-![grapes in the microwave](/pics/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
+![grapes in the microwave](img/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
 ## 部署您的文档
 受益于本工程使用了[Read The Docs](https://about.readthedocs.com/) 的在线自动编译服务，只需要将修改完成的仓库push至GitHub就会触发自动编译操作，编译过程耗时1-5分钟不等，编译完成的HTML网页可直接在[本网站](https://docs.smuscl.org/zh-cn/latest/) 查看。  
-  
+
 是的这个服务是免费的所以会有广告您要是不喜欢可以赞助我们买付费的服务。
 ## 良好的工作习惯
 所有成员在开始撰写自己的文档时，首先应该使用`git pull`操作拉取远程分支中存在的更改，并签出到一个新的分支进行编写，编写完成并成功推送至远程分支后再进行合并操作，这样可以避免多人同时在主分支编写而造成推送时产生变更记录无法吻合的报错。虽然本工程不是传统意义上的代码工程，也几乎不会出现多人同时修改一个文档的操作，但还是希望大家养成良好的工作习惯，避免产生不必要的问题。
