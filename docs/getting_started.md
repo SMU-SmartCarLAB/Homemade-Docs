@@ -67,7 +67,9 @@ like this: `![图片alt](图片链接 "图片title")`  特定于本工程的结�
 ```
 ![grapes in the microwave](/pics/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
 ## 部署您的文档
-受益于本工程使用了[Read The Docs](https://about.readthedocs.com/) 的在线自动编译服务，只需要将修改完成的仓库push至GitHub就会触发自动编译操作，编译过程耗时1-5分钟不等，编译完成的HTML网页可直接在[本网站](https://docs.smuscl.org/zh-cn/latest/) 查看。
+受益于本工程使用了[Read The Docs](https://about.readthedocs.com/) 的在线自动编译服务，只需要将修改完成的仓库push至GitHub就会触发自动编译操作，编译过程耗时1-5分钟不等，编译完成的HTML网页可直接在[本网站](https://docs.smuscl.org/zh-cn/latest/) 查看。  
+  
+是的这个服务是免费的所以会有广告您要是不喜欢可以赞助我们买付费的服务。
 ## 良好的工作习惯
 所有成员在开始撰写自己的文档时，首先应该使用`git pull`操作拉取远程分支中存在的更改，并签出到一个新的分支进行编写，编写完成并成功推送至远程分支后再进行合并操作，这样可以避免多人同时在主分支编写而造成推送时产生变更记录无法吻合的报错。虽然本工程不是传统意义上的代码工程，也几乎不会出现多人同时修改一个文档的操作，但还是希望大家养成良好的工作习惯，避免产生不必要的问题。
 
