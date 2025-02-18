@@ -4,7 +4,7 @@ theme:
   language: zh_CN
   logo: img/logo.png
 
-copyright: Copyright &copy; 2025 上海海事大学智能车实验室 </br> 共享遵循 CC-BY-NC-SA 4.0
+copyright: Copyright &copy; 2025 上海海事大学智能车实验室 </br> 共享遵循 CC-BY-NC-SA 4.0 &emsp; <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="CC BY-NC-SA 4.0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"></a>
 
 plugins:
   - search:
