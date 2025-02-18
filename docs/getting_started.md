@@ -6,20 +6,20 @@
 环境要求：`Python >= 3.8` `pip >= 20.0`   
 
 ### 安装本地MkDocs服务  
-```python  
-$pip install mkdocs
+```text
+$ pip install mkdocs
 ```  
 ### 克隆GitHub仓库
-```
-$git clone https://github.com/SMU-SmartCarLAB/Homemade-Docs.git
+```text
+$ git clone https://github.com/SMU-SmartCarLAB/Homemade-Docs.git
 ```  
 ### 验证本地MkDocs服务安装成功
 进入克隆的GitHub仓库文件夹根目录，其中应该包含`mkdocs.yml`文件，在当前文件夹启动MkDocs服务。  
-```python
+```text
 $ mkdocs serve
 ```
 如服务安装正确，应该产生如下输出   
-```python
+```text
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
 INFO    -  Documentation built in 0.22 seconds
@@ -32,7 +32,7 @@ INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/
 ## 熟悉MkDocs文件结构
 ### 工程目录结构
 一个MkDocs工程包含以下目录结构：
-```
+```text
 mkdocs.yml                         --配置文件，无需修改
 docs/                              --docs文件夹，存放所有markdown文件
     index.md
@@ -69,7 +69,85 @@ like this: `![图片alt](图片链接 "图片title")`  特定于本工程的结�
 ## 部署您的文档
 受益于本工程使用了[Read The Docs](https://about.readthedocs.com/) 的在线自动编译服务，只需要将修改完成的仓库push至GitHub就会触发自动编译操作，编译过程耗时1-5分钟不等，编译完成的HTML网页可直接在[本网站](https://docs.smuscl.org/zh-cn/latest/) 查看。  
 
-是的这个服务是免费的所以会有广告您要是不喜欢可以赞助我们买付费的服务。
+<del>是的这个服务是免费的所以会有广告您要是不喜欢可以赞助我们买付费的服务。</del>  
+
+## 一些技巧
+由于MkDocs使用[Python-Markdown](https://python-markdown.github.io/)完成HTML文件的构建，其对于不属于[Markdown syntax rules](https://daringfireball.net/projects/markdown/syntax)中的方式未提供原生支持，例如大部分的[扩展语法](https://markdown.com.cn/extended-syntax/)。当然MkDocs默认内置了一些Python-Markdown插件来支持现代化的Markdown扩展语法，以下是测试已知的可用[扩展语法](https://markdown.com.cn/extended-syntax/)和[扩展语法](https://markdown.com.cn/extended-syntax/)的替代方式。  
+### 可用的扩展语法
+#### 围栏代码块
+在开头和结尾行使用三个`` ``` ``来构成围栏代码块，并且可以在`` ``` ``后添加代码的类型如`C++`来触发高亮显示。
+````C++
+```C++
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello, world!" << endl;
+    return 0;
+}
+```
+````
+这将输出为
+```C++
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello, world!" << endl;
+    return 0;
+}
+```
+如需要在围栏代码块中展示`` ``` ``符号，使用四个反引号`` ```` ``替代三个反引号。
+#### 表格
+要添加表格，请使用三个或多个连字符`---`创建每列的标题，并使用管道`|`分隔每列。您可以选择在表的任一端添加管道。
+```markdown
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+```
+这将输出为  
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |  
+
+#### Admonitions
+要添加警告/信息(Admonitions)块，使用三个感叹号`!!!`并在其后跟随需要显示的标题，部分标题拥有特定的渲染外观，块内容启始于下一行，并由四个空格构成每一行块内容的开头。
+```
+!!! note
+    试试看把两个葡萄放进微波炉
+```
+这将输出为  
+
+!!! note
+    试试看把两个葡萄放进微波炉
+已知可以触发特殊渲染外观的标题词：  
+
+!!! warning
+    不要把两个葡萄放进微波炉
+
+!!! tip
+    每次最多把一个葡萄放进微波炉
+
+!!! danger
+    把两个葡萄放进微波炉会发生意想不到的事情
+
+当然，也可以使用任意文字作为标题
+
+!!! 你真的要把两个葡萄放进微波炉吗
+    哈哈 
+
+### 使用HTML样式替代
+Markdown支持使用原生HTML方法直接进行样式替代，如果想要实现不受[Markdown syntax rules](https://daringfireball.net/projects/markdown/syntax)支持的样式方法，可以考虑直接使用HTML样式。  
+例如使用删除线:
+```html
+<del>嘤嘤嘤我被删除了</del>
+```
+这将展示为  
+<del>嘤嘤嘤我被删除了</del>
+
 ## 良好的工作习惯
 所有成员在开始撰写自己的文档时，首先应该使用`git pull`操作拉取远程分支中存在的更改，并签出到一个新的分支进行编写，编写完成并成功推送至远程分支后再进行合并操作，这样可以避免多人同时在主分支编写而造成推送时产生变更记录无法吻合的报错。虽然本工程不是传统意义上的代码工程，也几乎不会出现多人同时修改一个文档的操作，但还是希望大家养成良好的工作习惯，避免产生不必要的问题。
 
