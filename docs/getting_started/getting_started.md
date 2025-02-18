@@ -34,38 +34,87 @@ INFO    -  [15:50:43] Serving on http://127.0.0.1:8000/
 一个MkDocs工程包含以下目录结构：
 ```text
 mkdocs.yml                         --配置文件，无需修改
-docs/                              --docs文件夹，存放所有markdown文件
-    index.md
-    how_to_build_a_spaceship.md
-    fundamentals_of_rocket_science.md
-    ....
-    img/                              --图片文件夹，存放需要在文档中展示的图片
-        docA/                         --为每一个需要存放图片的文档创建一个单独的文件夹，文件夹名称与文档名称相同
-              blown_capacitor.jpg
-             ...
-        docB/
-              grapes_in_the_microwave.jpg
-              ...
+docs/                              --docs文件夹，存放所有文件
+    index.md                       --主页文件
+    chapter1/                      --章节文件夹
+              how_to_build_a_spaceship.md    --章节中的markdown文档
+              fundamentals_of_rocket_science.md
+              ....
+              img/                              --图片文件夹，存放需要在文档中展示的图片
+                  grapes_in_the_microwave.jpg
+                  ...
     ...
 ```
-您撰写的文档应该放置于`/docs`文件夹中，**不要随意修改或删除不是自己创建的文档**，请互相尊重他人的劳动成果。  
+您撰写的文档应该放置于`/docs`文件夹中，**请为撰写的章节创建一个相应的文件夹**，并将撰写的Markdown文件放置在文件夹中。是否为章节中的二级章节创建文件夹无强制规定，但是建议为每个二级章节创建文件夹以方便整理。
 
-创建文档时，**请注意文档名称仅支持英文字符**，文档名称应当清晰的表达文档包含的内容主题且不宜过长，**禁止使用拼音**，单词之间使用下划线`_`进行分隔。
+!!! warning
+    **不要随意修改或删除不是自己创建的文档**，请互相尊重他人的劳动成果。  
 
-如需在文档中插入图片，请在`/docs/img`文件夹下创建一个**与文档名字相同的文件夹**放置需要插入的图片，由于本仓库托管在GitHub并且我们买不起付费账户，为了减小仓库体积，请使用JPG格式的图片并尽量控制图片大小小于`700KB`。
+创建文档和文件夹时，**请注意文档名称仅支持英文字符**，文档名称应当清晰的表达文档包含的内容主题且不宜过长，**禁止使用拼音**，单词之间使用下划线`_`进行分隔。
+
+如需在文档中插入图片，请在存储Markdown文件的文件夹路径下创建一个`img`文件夹放置需要插入的图片，由于本仓库托管在GitHub并且我们买不起付费账户，为了减小仓库体积，请使用JPG格式的图片并尽量控制图片大小小于`700KB`。 
+
+!!! note
+    [Python-Markdown](https://python-markdown.github.io/)对图片的索引使用相对路径完成，即实际的图片路径应该为`/markdown文件路径`+`/插入图片时指定的路径`。如在插入图片时指定路径为`img/pic1.jpg`，而Markdown文件存储的绝对路径为`docs/chapter1/topic1`，则图片的绝对路径应为`docs/chapter1/topic1/img/pic1.jpg`
+
+### 设置章节导航栏
+在工程根目录下找到`mkdocs.yml`文件，其中包含章节导航栏的配置：  
+
+!!! warning
+    禁止修改`mkdocs.yml`中除了`nav:`以外的部分，修改时也不要破坏不是由自己创建并已经存在的导航结构。
+```yml
+nav:                 --导航栏配置
+  - Home: index.md   --主页
+  - "使用指南":       --一级章节标题
+      - getting_started/getting_started.md   --页面文件
+  - Chapter1:        --一级章节标题
+      - Topic1:      --二级章节标题
+        - chapter1/topic1/page1.md   --页面文件
+        - chapter1/topic1/page2.md
+```
+其中，`nav:`标识导航栏配置起始，`-Home: index.md`为主页，其后的部分为用户可配置的导航目录，章节最多包含两级标题。  
+
+!!! note
+    一个章节既可以使用二级标题结构也可以使用一级标题结构，但是仅能在最低一级的标题下包含页面的`Markdown`文件。
+正确的操作：
+
+```text
+- Chapter1:                         --一级章节标题
+    - Topic1:                       --二级章节标题
+        - chapter1/topic1/page1.md  --页面文件
+        - chapter1/topic1/page2.md
+```  
+
+同样也是正确的操作：
+
+```text
+- Chapter1:                         --一级章节标题
+    - chapter1/page1.md             --页面文件
+    - chapter1/page2.md
+```
+
+错误的操作：
+
+```text
+- Chapter1:                         --一级章节标题
+    - chapter1/page1.md             --页面文件
+    - Topic1:                       --二级章节标题
+        - chapter1/topic1/page2.md  --页面文件
+```
+
 ### 编写文档文件
 MkDocs接受使用标准Markdown语法编写的文档，文件后缀名为`.md`,关于Markdown语法的更多内容，可以参考[Markdown教程](https://markdown.com.cn/)。   
 
-MkDocs会按照Markdown文件中的标题层级生成导航栏，共支持三级标题结构，一级标题将被作为页面的启始标题，二三级标题构成包含在一级标题下的下拉列表，点击相应的标题即可跳转到对应的文档位置，三级以下的标题将不会展示在MkDocs导航栏中，但其在文档中的展示样式依旧遵循Markdown标题的渲染规则。  
+MkDocs会按照Markdown文件中的标题层级为每一个Markdown文件生成导航栏，共支持三级标题结构，一级标题将被作为页面的启始标题，二三级标题构成包含在一级标题下的下拉列表，点击相应的标题即可跳转到对应的文档位置，三级以下的标题将不会展示在MkDocs导航栏中，但其在文档中的展示样式依旧遵循Markdown标题的渲染规则。另外，在`mkdocs.yml`中设定的章节标题将作为大标题生成在所有此章节的文件之上。
 
 在文档中插入图片的操作与常规Markdown文档相同，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。  
-like this: `![图片alt](图片链接 "图片title")`  特定于本工程的结构下，图片链接应该为`img/文档标题/图片名字.jpg`   
+like this: `![图片alt](图片链接 "图片title")`  特定于本工程的结构下，图片链接应该为`img/图片名字.jpg`   
 
 如这段文本将产生如下的图片插入效果
 ```markdown
-![grapes in the microwave](img/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
+![grapes in the microwave](img/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
 ```
-![grapes in the microwave](img/getting_started/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
+![grapes in the microwave](img/grapes_in_the_microwave.jpg "不要把葡萄放进微波炉")
 ## 部署您的文档
 受益于本工程使用了[Read The Docs](https://about.readthedocs.com/) 的在线自动编译服务，只需要将修改完成的仓库push至GitHub就会触发自动编译操作，编译过程耗时1-5分钟不等，编译完成的HTML网页可直接在[本网站](https://docs.smuscl.org/zh-cn/latest/) 查看。  
 

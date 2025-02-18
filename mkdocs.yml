@@ -1,7 +1,26 @@
-site_name: 上海海事大学智能车实验室
+site_name: 上海海事大学智能车实验室技术文档
 theme:
   name: readthedocs
+  language: zh_CN
+  logo: img/logo.png
+
+copyright: Copyright &copy; 2025 上海海事大学智能车实验室 </br> 共享遵循 CC-BY-NC-SA 4.0
+
 plugins:
-  - search
+  - search:
+      min_search_length: 1
+      lang: 
+          - zh
+          - en
+          - ja
 markdown_extensions:
   - admonition
+
+nav:
+  - Home: index.md
+  - "使用指南": 
+      - getting_started/getting_started.md
+  - Chapter1: 
+      - Topic1:
+        - page1.md
+        - page2.md
