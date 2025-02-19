@@ -20,7 +20,5 @@ nav:
   - Home: index.md
   - "使用指南": 
       - getting_started/getting_started.md
-  - Chapter1: 
-      - Topic1:
-        - page1.md
-        - page2.md
+  - Teams使用指南: 
+      - Microsoft Teams 注册指南: teams_tutor/teams_register.md
