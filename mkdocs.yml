@@ -22,3 +22,4 @@ nav:
       - getting_started/getting_started.md
   - Teams使用指南: 
       - Microsoft Teams 注册指南: teams_tutor/teams_register.md
+      - 使用Teams创建审批请求: teams_tutor/teams_approval.md
