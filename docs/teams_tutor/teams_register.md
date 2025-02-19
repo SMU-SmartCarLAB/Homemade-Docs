@@ -30,18 +30,18 @@
     由于信息化办公室的安全策略要求，学校邮箱的登录密码会在一定时间后自动过期并要求更新新的密码，如果在绑定客户端后更新了密码则会导致需要重新配置邮件客户端。如要避免这种情况可以使用网易企业邮箱的 [客户端授权码] 功能，具体使用方法详见您的邮箱中 [设置-客户端设置] 一栏
 
 ## 注册Microsoft账户并登录Teams
-导航到[Microsoft365教育](https://www.microsoft.com/zh-cn/education/products/office)，选择 [开始使用]，根据页面向导完成注册，**注意使用您的学校教育邮箱作为邮箱地址，国家和地区选择中国**，注册完成后您的账户将自动加入上海海事大学Azure域。在填写姓名时请填写您的真实姓名，以便我们审核您的团队加入请求。  
+导航到[Microsoft365教育](https://www.microsoft.com/zh-cn/education/products/office)，选择 `开始使用`，根据页面向导完成注册，**注意使用您的学校教育邮箱作为邮箱地址，国家和地区选择中国**，注册完成后您的账户将自动加入上海海事大学Azure域。在填写姓名时请填写您的真实姓名，以便我们审核您的团队加入请求。  
 
-注册完成后，请访问 [下载Microsoft Teams](https://www.microsoft.com/zh-cn/microsoft-teams/group-chat-software/) 来下载并安装Microsoft Teams。安装完成后的Microsoft Teams应该位于开始菜单中字母M列表下，启动Microsoft Teams，您应该看到以下欢迎页面，其中自动识别的账户为您当前系统中登录的Microsoft账户，**不要选择这个账户**并点击下方的 [使用其他账户登录]。  
+注册完成后，请访问 [下载Microsoft Teams](https://www.microsoft.com/zh-cn/microsoft-teams/group-chat-software/) 来下载并安装Microsoft Teams。安装完成后的Microsoft Teams应该位于开始菜单中字母M列表下，启动Microsoft Teams，您应该看到以下欢迎页面，其中自动识别的账户为您当前系统中登录的Microsoft账户，**不要选择这个账户**并点击下方的 `使用其他账户登录`。  
 
 ![login](img/login.jpg)  
 
-使用您刚刚使用学校教育邮箱创建的Microsoft账户进行登录，如果看到如下 [对所有应用保持登录状态] 的提示，请选择 [否，仅登录此应用]，否则此账户将替代您计算机上所有已经登录Microsoft账户的应用，可能导致Office365和Xbox订阅产生问题。  
+使用您刚刚使用学校教育邮箱创建的Microsoft账户进行登录，如果看到如下 `对所有应用保持登录状态` 的提示，请选择 `否，只登录此应用`，否则此账户将替代您计算机上所有已经登录Microsoft账户的应用，可能导致Office365和Xbox订阅产生问题。  
 
 ![login_all](img/login_all.jpg)  
 
 ## 加入团队
-您应该已经成功登录了Microsoft Teams应用并正确注册于上海海事大学Microsoft Azure域中，请检查您的Microsoft Teams应用程序，其左侧导航栏中应该具有 [团队] 选项，这证明您的操作正确，如果找不到 [团队] 选项卡，请重新确认您是否使用了正确的学校教育邮箱进行注册和登录。
+您应该已经成功登录了Microsoft Teams应用并正确注册于上海海事大学Microsoft Azure域中，请检查您的Microsoft Teams应用程序，其左侧导航栏中应该具有 `团队` 选项，这证明您的操作正确，如果找不到 `团队` 选项卡，请重新确认您是否使用了正确的学校教育邮箱进行注册和登录。
 
 ![teams_homepage](img/teams_homepage.jpg)
 
