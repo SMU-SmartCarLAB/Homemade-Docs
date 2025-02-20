@@ -23,3 +23,6 @@ nav:
   - Teams使用指南: 
       - Microsoft Teams 注册指南: teams_tutor/teams_register.md
       - 使用Teams创建审批请求: teams_tutor/teams_approval.md
+  - ERP使用指南:
+      - 如何加入我们在ERP上的企业: erp_tutor/erp_register.md
+      - 如何添加BOM: erp_tutor/erp_add_bom.md
