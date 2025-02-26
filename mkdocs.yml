@@ -26,6 +26,8 @@ nav:
   - ERP使用指南:
       - 如何加入我们在ERP上的企业: erp_tutor/erp_register.md
       - 如何添加BOM: erp_tutor/erp_add_bom.md
+  - 拓竹打印机使用指南:
+      - 如何使用拓竹打印机: bambu_tutor/bambu_manual.md
   - 公共资料:
       - 实验室大车:
         - 资料链接: LBC_project/resource_link.md
