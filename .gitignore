@@ -1,0 +1,5 @@
+# 忽略本地的虚拟环境
+/.conda/
+/conda/
+/.venv/
+/.env
