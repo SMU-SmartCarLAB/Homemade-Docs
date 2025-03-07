@@ -9,7 +9,7 @@ copyright: Copyright &copy; 2025 上海海事大学智能车实验室 </br> 共�
 plugins:
   - search:
       min_search_length: 1
-      lang: 
+      lang:
           - zh
           - en
           - ja
@@ -18,9 +18,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - "使用指南": 
+  - "使用指南":
       - getting_started/getting_started.md
-  - Teams使用指南: 
+  - Teams使用指南:
       - Microsoft Teams 注册指南: teams_tutor/teams_register.md
       - 使用Teams创建审批请求: teams_tutor/teams_approval.md
   - ERP使用指南:
@@ -28,3 +28,8 @@ nav:
       - ERP出库流程: erp_tutor/erp_step.md
       - 如何添加BOM: erp_tutor/erp_add_bom.md
       - 如何新建生产计划: erp_tutor/erp_new_production_plan.md
+  - 拓竹打印机使用指南:
+      - 如何使用拓竹打印机: bambu_tutor/bambu_manual.md
+  - 公共资料:
+      - 实验室大车:
+        - 资料链接: LBC_project/resource_link.md
