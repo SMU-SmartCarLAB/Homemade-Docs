@@ -25,4 +25,6 @@ nav:
       - 使用Teams创建审批请求: teams_tutor/teams_approval.md
   - ERP使用指南:
       - 如何加入我们在ERP上的企业: erp_tutor/erp_register.md
+      - ERP出库流程: erp_tutor/erp_step.md
       - 如何添加BOM: erp_tutor/erp_add_bom.md
+      - 如何新建生产计划: erp_tutor/erp_new_production_plan.md
